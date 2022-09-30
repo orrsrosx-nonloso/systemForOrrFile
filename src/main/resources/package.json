@@ -1,0 +1,31 @@
+{
+  "name": "study-filesystem",
+  "version": "1.0.0",
+  "description": "文件服务器。",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch",
+    "build": "gulp",
+    "serve": "gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.orrsrosx.com:study/study-filesystem.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "browserify": "^16.5.1",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "requirejs": "^2.3.6",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "gulp-watch": "^5.0.1"
+  }
+}

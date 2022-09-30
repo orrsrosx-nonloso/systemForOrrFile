@@ -1,0 +1,459 @@
+body,
+html {
+	height: 95%;
+	
+}
+/*大容器*/
+.container {
+    padding-top: 60px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+/*左边框*/
+.left {
+    width: 300px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    overflow-x:hidden;
+    text-overflow: ellipsis;
+    
+}
+
+/*左边框子节点*/
+.child {
+    overflow: auto;
+}
+/*右边框*/
+.right {
+    flex-grow: 2;
+    width: 745px;
+}
+
+.file {
+    margin-left: 3px;
+}
+
+
+
+ul>li {
+    list-style: none;
+}
+
+li>div{
+    background-color: #ffffff;
+}
+
+li>div:hover{
+    background-color: #d3edff;
+}
+
+span {
+    display: inline-block;/*行内元素*/
+}
+
+ul {
+    margin-top: 1px;
+    padding-inline-start: 15px;/*	多出宽度和高度*/
+}
+/*图标*/
+.file {
+    background: url("../image/file.png") left top no-repeat;
+    margin-left: 0;
+}
+
+.dir {
+    background: url("../image/dir.png") left top no-repeat;
+}
+
+.up {
+    background: url("../image/up.png") left top no-repeat;
+}
+
+.icon {
+    text-decoration: none;
+    padding-left: 0.8em;
+    cursor:pointer;
+}
+
+
+.catalog{
+    width: 100%;
+    line-height: 40px;
+}
+
+
+/*编辑框*/
+.content {
+    padding-top: 50px;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    height: calc(100% - 58px);
+    display: flex;
+    width: 100%;
+    margin-top: 5px;
+}
+
+
+
+/* 可展开*/
+.open {
+    margin-left: -12px;
+    border: 6px solid transparent;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top-color: black;
+
+}
+
+/*创建文件框*/
+.d1{
+    width: 400px;
+    height: 150px;
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+    overflow: auto;
+    display: none;
+    background-color: rgb(122, 133, 136);
+    animation: fade-in;  
+    animation-duration: 1s;  
+    border-radius:20px;
+}
+
+@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}  
+/*无法修改的画布*/
+.d2{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(214, 239, 240);
+    z-index: 1;
+    opacity: 0.8;
+    display: none;
+}
+
+
+ 
+/*文本编辑*/
+[contenteditable] {
+    outline: none;
+    margin: 1px;
+	padding:4px 16px;
+	background:#eee;
+	overflow: auto;
+	white-space:pre;
+    width: 98%;
+    animation: edit-in;  
+    animation-duration: 0.5s;
+    background-color: rgb(245, 250, 255);
+}
+
+@keyframes edit-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}  
+.textBox{
+    display: none;
+}
+/*编辑内容输入*/
+.number{
+    display: inline-block;
+    font-size: 20px;
+    width: 100%;
+    height: 30px;
+    margin: 40px auto;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: rgb(8, 7, 7);
+}
+/*提交框*/
+.submit{
+    display: flex;
+    width: 50%;
+    height: 40px;
+    margin: 20px auto;
+    margin-left: 94px;
+    margin-bottom: 10px;
+}
+.confirm{
+    background-color: #96b5f7;
+    color: rgb(0, 0, 0);
+    width: 8%;
+    min-width: 80px;
+    height: 30px;
+    flex: 1;
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius:5px;
+}
+
+/*文件创建按钮*/
+.createFile{
+    background-color: #248CD6;
+    color: rgb(247, 245, 245);
+    width: 60px;
+    height: 30px;
+    flex: 1;
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-left: 10px;
+    display: none;
+}
+.createDir{
+    background-color: #248CD6;
+    color: rgb(247, 245, 245);
+    width: 60px;
+    height: 30px;
+    flex: 1;
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-left: 10px;
+    display: none;
+}
+.fileTips{
+    background-color: #ffffff;
+    color: rgb(247, 245, 245);
+    width: 25%;
+    height: 30px;
+    flex: 1;
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-left: 10px;
+    text-overflow:ellipsis;
+}
+/*保存按钮*/
+.preserve{
+	flex: 1;
+	width: 100%;
+    height: 35px;
+	border: none;
+    color: #000;
+	margin: 20px auto;
+    margin-bottom: 10px;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+
+.download {
+    background: url("../image/download.png") left top no-repeat;
+    padding-bottom: 8px;
+}
+.delete {
+    background: url("../image/delete.png") left top no-repeat;
+    padding-bottom: 8px;
+}
+.preserve:hover{
+	background-color: #d4e2ec;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+
+.confirm:hover{
+    background-color: #b9cfff;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+.top{
+    position: absolute;
+    right: 10px;
+    display: flex;
+    width: 25%;
+    height: 40px;
+    padding-bottom: 20px;
+}
+
+
+/*创建功能*/
+.container1 {
+    margin-left: 160px;
+    padding-top: 5px;
+    width: 70px;
+    height: 30px;
+}
+
+
+/*文件创建*/
+.container1>input:first-of-type {
+    width: 24px;
+    height: 24px; 
+    border: none;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    background: url("../image/files.png") left top no-repeat;
+    outline: none;
+    cursor: pointer;
+}
+.container1>input:first-of-type:hover{
+    border: 1px solid #adb3bd;
+    padding-left: 10px;
+}
+
+/*文件夹创建*/
+.container1>input:last-of-type {
+    width: 24px;
+    height: 24px; 
+    border: none;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    background:  url("../image/dirs.png") left top no-repeat;
+    outline: none;
+    cursor: pointer;
+}
+.container1>input:last-of-type:hover{
+    border: 1px solid #adb3bd;
+    padding-left: 10px;
+}
+
+
+
+.create_content{
+    margin-top: 20px;
+    margin-left: 33%;
+    width: 30%;
+    height: 30px;
+    background-color: #eee;
+}
+
+.editImg{
+    margin: auto auto;
+    display: none;
+    width: auto;
+}
+
+/*各功能完成之后的响应框*/
+.buttonResponse{
+    width: 380px;
+    height: 130px;
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+    overflow: auto;
+    display: none;
+    background-color: rgb(196, 209, 212); 
+    animation: fades-in;  
+    animation-duration: 1s;  
+    border-radius:20px;
+}
+
+.deleteResponse{
+    width: 380px;
+    height: 130px;
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+    overflow: auto;
+    display: none;
+    background-color: rgb(196, 209, 212); 
+    animation: fades-in;  
+    animation-duration: 1s;  
+    border-radius:20px;
+}
+
+@keyframes fades-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}  
+
+.contentEnd{
+    margin-left: 20px;
+    padding-left: 20px;
+    font-size: 20px;
+    width: 97%;
+    height: 30px;
+    margin: 40px auto;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    background-color: rgb(196, 209, 212);
+    color: rgb(0, 0, 0);
+}
+
+
+.commit{
+    background-color: #63baf8;
+    color: rgb(247, 245, 245);
+    width: 50px;
+    height: 30px;
+    flex: 1;    
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.commitDelete{
+    background-color: #63baf8;
+    color: rgb(247, 245, 245);
+    width: 50px;
+    height: 30px;
+    flex: 1;    
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+.close{
+    background-color: #63baf8;
+    color: rgb(247, 245, 245);
+    width: 50px;
+    height: 30px;
+    flex: 1;    
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.contentDelete{
+    margin-left: 20px;
+    padding-left: 20px;
+    font-size: 20px;
+    width: 97%;
+    height: 30px;
+    margin: 40px auto;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    background-color: rgb(196, 209, 212);
+    color: rgb(0, 0, 0);
+}

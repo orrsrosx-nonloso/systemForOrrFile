@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,//
+    "lib": ["DOM", "ES2016", "ScriptHost", "ES2019.Array"],
+    "typeRoots": [], // 声明文件目录，默认时node_modules/@types
+    "types": [], // 加载的声明文件包
+    "removeComments": true,
+    "noUnusedLocals": false,
+    "strictFunctionTypes": true, // 不允许函数参数双向协变
+    "strictBindCallApply": true, // 严格的bind/call/apply检查
+    "noImplicitThis": true, // 不允许this有隐式的any类型
+    "noUnusedParameters": true, // 检查未使用的函数参数(只提示不报错)
+    "noFallthroughCasesInSwitch": true, // 防止switch语句贯穿(即如果没有break语句后面不会执行)
+    "noImplicitReturns": true, //每个分支都会有返回值
+    "esModuleInterop": true, // 允许export=导出，由import from 导入
+    "allowUmdGlobalAccess": true, // 允许在模块中全局变量的方式访问umd模块
+    "outDir": "./static/js",
+    "baseUrl": "./static/ts",
+    "noImplicitAny": true,
+    "newLine": "LF",
+    "target": "es6",
+    "module": "amd",
+    "allowJs": true,
+    "moduleResolution": "node",
+  }
+}

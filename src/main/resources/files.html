@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>FTP文件下载系统</title>
+	<link rel="stylesheet" href="/src/main/resources/static/css/style.css">
+    <link rel="stylesheet" href="/src/main/resources/static/font/css/font-awesome.min.css">
+
+</head>
+
+<body>
+	<div style="position: fixed; text-align: center;width: 99%;line-height: 60px;height: 60px;
+		background-color: rgb(134, 209, 238);color: white;font-size: 20px;text-indent: 2em">orrsrosx文件管理系统</div>
+
+	<div class="container">
+		<div class="left" id="item-catalog">
+			<div class="container1">
+				<input id="fileButton" type="button" title="创建文件" value="" id="create">
+				<input id="dirButton" type="button" title="创建文件夹" value="" id="create">
+			</div>
+
+		</div>
+		<div class="right child">
+			<div class="button-container" style="position: fixed;height: 43px;padding-left:20px; padding-top: 1px;padding-bottom: 10px;width: 77%;background-color: rgb(255, 255, 255);">
+				<button type="button"  class="confirm" id="preserve"><i class="fa fa-floppy-o fa-lg" style="padding-right: 8px;"></i>保存</button>
+				<button type="button"  class="confirm" id="download"><i class="fa fa-download fa-lg" style="padding-right: 8px;"></i>下载</button>
+				<button type="button"  class="confirm" id="deleteSelectFile"><i class="fa fa-trash fa-lg" style="padding-right: 8px;"></i>删除</button>
+				<button  type="button" class="fileTips"><input readonly type="text" class="number" placeholder="" id="number"></button>
+				<span class="path"></span>
+			</div>
+			<div class="content">
+				<div contenteditable="true" id="textBox" class="textBox"></div>
+				<div class="editImg" id="editImg">
+					<img src="" alt="" id="childImg">
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="d2" class="d2"></div>
+	<div data-path="undefined" data-fname="undefined" id="d1" class="d1">
+		<input type="text" title="文件名" value="" class="create_content" id="create_content">
+		<div class="submit">
+			<button type="button" class="createFile"  id="createFile">创建</button>
+			<button type="button" class="createDir"   id="createDir">创建</button>
+		</div>
+	</div>
+
+	<div class="buttonResponse"  id="buttonResponse">
+		<input readonly type="text" class="contentEnd" placeholder="" id="contentEnd">
+		<div class="submit">
+			<button type="button"  class="commit"  id="commit">确认</button>
+		</div>
+	</div>
+
+	<div class="deleteResponse"  id="deleteResponses">
+		<input readonly type="text" class="contentDelete" placeholder="" id="contentDelete">
+		<div class="submit">
+			<button type="button"  class="commitDelete"  id="commitDelete">确认</button>
+			<button type="button"  class="close"  id="close">取消</button>
+		</div>
+	</div>	
+
+</body>
+<script src="/src/main/resources/static/js/requirejs/require.js" type="text/javascript"></script>
+<script>
+    /*引入打包后的AMD规范js文件*/
+    require(['/src/main/resources/static/js/main.js']);
+</script>
+
+</html>
